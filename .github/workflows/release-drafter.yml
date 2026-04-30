@@ -35,6 +35,6 @@ jobs:
       - name: Update Release Draft
         uses: release-drafter/release-drafter@5de93583980a40bd78603b6dfdcda5b4df377b32 # v7.2.0
         with:
-          committish: main
+          commitish: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
