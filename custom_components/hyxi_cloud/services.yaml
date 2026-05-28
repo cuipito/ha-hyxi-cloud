@@ -1,0 +1,39 @@
+force_refresh:
+  name: Force Refresh
+  description: Force an immediate data refresh from the HYXI cloud
+
+set_em_mode:
+  name: Set Energy Manager Mode
+  description: Force the Energy Manager into a specific battery mode
+  fields:
+    mode:
+      name: Mode
+      description: Battery mode to set
+      required: true
+      selector:
+        select:
+          options:
+            - label: Charge
+              value: charge
+            - label: Discharge
+              value: discharge
+            - label: Self Consume
+              value: self_consume
+    power:
+      name: Power (W)
+      description: Power level in watts (required for charge/discharge)
+      required: false
+      selector:
+        number:
+          min: 100
+          max: 9000
+          step: 100
+          unit_of_measurement: W
+
+em_pause:
+  name: Pause Energy Manager
+  description: Temporarily pause the Energy Manager engine (sets self_consume)
+
+em_resume:
+  name: Resume Energy Manager
+  description: Resume the Energy Manager engine after a pause

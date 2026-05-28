@@ -586,5 +586,56 @@
         "name": "Clear Active Alarms"
       }
     }
+  },
+  "device_automation": {
+    "trigger_type": {
+      "em_charge_started": "Energy Manager started charging",
+      "em_charge_stopped": "Energy Manager stopped charging",
+      "em_discharge_started": "Energy Manager started discharging",
+      "em_discharge_stopped": "Energy Manager stopped discharging",
+      "em_night_mode_on": "Night mode activated",
+      "em_night_mode_off": "Night mode deactivated",
+      "em_high_load_on": "High load detected",
+      "em_high_load_off": "High load cleared"
+    }
+  },
+  "services": {
+    "force_refresh": {
+      "name": "Force Refresh",
+      "description": "Force an immediate data refresh from the HYXI cloud"
+    },
+    "set_em_mode": {
+      "name": "Set Energy Manager Mode",
+      "description": "Force the Energy Manager into a specific battery mode",
+      "fields": {
+        "mode": {
+          "name": "Mode",
+          "description": "Battery mode to set"
+        },
+        "power": {
+          "name": "Power",
+          "description": "Power level in watts (required for charge/discharge)"
+        }
+      }
+    },
+    "em_pause": {
+      "name": "Pause Energy Manager",
+      "description": "Temporarily pause the Energy Manager engine"
+    },
+    "em_resume": {
+      "name": "Resume Energy Manager",
+      "description": "Resume the Energy Manager engine after a pause"
+    }
+  },
+  "exceptions": {
+    "em_not_running": {
+      "message": "Energy Manager is not configured or not running"
+    },
+    "power_required": {
+      "message": "Power is required for {mode} mode"
+    },
+    "mode_set_failed": {
+      "message": "Failed to set mode {mode}"
+    }
   }
 }
